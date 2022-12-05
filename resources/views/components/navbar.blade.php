@@ -22,7 +22,7 @@
             </div>
             <div class="button">
                 <a href="">Start Free 14 Trial
-                    <img src="{{ asset('slicing/images/icons/arrow-right.svg')}}" alt="right arrow">
+                    <img src="{{ asset('slicing/images/icons/right-arrow.svg')}}" alt="right arrow">
                 </a>
             </div>
         </div>
