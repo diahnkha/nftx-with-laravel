@@ -7,8 +7,6 @@
     <title>{{ $judul }}</title>
 </head>
 <body>
-    Ini Dari template
-    <br>
     @yield("content")
 </body>
 </html>

@@ -15,7 +15,47 @@ use App\Http\Controllers\LandingController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('slicing');
 })->name("homepage");
 
-Route::get("/landing", [LandingController::class, "landing"])->name("page");
+Route::get('/customer', function () {
+    return view('customer-coba');
+})->name("customer");
+
+Route::get('/pricing', function () {
+    return view('pricing-coba');
+})->name("pricing");
+
+Route::get('/how', function () {
+    return view('how-coba');
+})->name("how");
+
+Route::get('/robust', function () {
+    return view('robust-coba');
+})->name("robust");
+
+Route::get('/testimonial', function () {
+    return view('testimonial-coba');
+})->name("testimonial");
+
+Route::get('/planet', function () {
+    return view('planet-coba');
+})->name("planet");
+
+Route::get('/analyse', function () {
+    return view('analyse-coba');
+})->name("analyse");
+
+Route::get("/landing", [LandingController::class, "landing"])
+    ->prefix("v1")
+    ->name("page");
+
+// Route::prefix("user")->group(function(){
+//     Route::get("landing", LandingController::class, "landing"])
+//         ->name("page");
+// });
+
+// /user
+// /user/create
+// /user/edit
+// /user/delete
