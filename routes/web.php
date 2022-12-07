@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SekolahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,16 @@ Route::prefix("user")->group(function(){
     Route::post("/create", [UserController::class, "create"])->name("user.create");
     Route::put("/update/{id}", [UserController::class, "update"])->name("user.update");
     Route::get("/destroy/{id}", [UserController::class, "destroy"])->name("user.destroy");
+});
 
+Route::prefix("sekolah")->group(function(){
+    Route::get("/list", [SekolahController::class, "index"])->name("sekolah.list");
+    Route::get("/detail/{id}", [SekolahController::class, "detail"])->name("sekolah.detail");
+    Route::get("/store", [SekolahController::class, "store"])->name("sekolah.store");
+
+    Route::post("/create", [SekolahController::class, "create"])->name("sekolah.create");
+    Route::put("/update/{id}", [SekolahController::class, "update"])->name("sekolah.update");
+    Route::get("/destroy/{id}", [SekolahController::class, "destroy"])->name("sekolah.destroy");
 });
 
 Route::get("/landing", [LandingController::class, "landing"])

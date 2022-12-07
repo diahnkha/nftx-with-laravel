@@ -23,8 +23,8 @@
         <label for="role">Role :</label>
         <select name="role" id="role">
             <option value="1" {{ $user->role == 1 ? "selected" : ""}}>Admin</option>
-            <option value="1" {{ $user->role == 2 ? "selected" : ""}}>User</option>
-            <option value="1" {{ $user->role == 3 ? "selected" : ""}}>Guest</option>
+            <option value="2" {{ $user->role == 2 ? "selected" : ""}}>User</option>
+            <option value="3" {{ $user->role == 3 ? "selected" : ""}}>Guest</option>
         </select>
 
         <button type="Submit" @class(["btn", "btn-primary"])>Tambah</button>

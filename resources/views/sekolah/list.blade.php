@@ -25,10 +25,10 @@
                     <td>{{ $sekolah->email }}</td>
                     <td>{{ $sekolah->alamat }}</td>
                     <td>
-                        @switch($sekolah->role)
+                        @switch($sekolah->jenis_sekolah)
                             @case(1) SD @break
-                            @case(2) TK @break
-                            @case(3) SMP @break
+                            @case(2) SMP @break
+                            @case(3) SMA @break
                             @default Guest
                         @endswitch
                     </td>
