@@ -70,3 +70,35 @@ php artisan serve
 
 php artisan make:controller LandingController
 
+with postgresql
+
+hapus user di migration 
+
+php artisan make:migration create_user_table
+
+php artisan migrate
+
+in windows, pgsql sama dbo pgsl in php.ini titik komanya dihapus
+
+hapus model user di app/model
+
+php artisan make:model user
+
+di model/user.php tambahin public $fillable = []; // untuk ada apa aja
+atau pake guarded dengan milih selain id jadi include semuanya
+
+php artisan make:controller UserController
+
+app/http/controller/user
+
+use App\Models\User;
+
+    function index() {} //menampilkan seluruh data
+    function detail() {} //menampilkan sebuah data
+    function store() {} //tampilan menambah data
+    function update() {} //mengupdate data
+    function create() {} //menambah data
+    function destroy() {} //menghapus data
+
+alt+shift+bawah
+command+d

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,17 @@ Route::get('/planet', function () {
 Route::get('/analyse', function () {
     return view('analyse-coba');
 })->name("analyse");
+
+Route::prefix("user")->group(function(){
+    Route::get("/list", [UserController::class, "index"])->name("user.list");
+    Route::get("/detail/{id}", [UserController::class, "detail"])->name("user.detail");
+    Route::get("/store", [UserController::class, "store"])->name("user.store");
+
+    Route::post("/create", [UserController::class, "create"])->name("user.create");
+    Route::put("/update/{id}", [UserController::class, "update"])->name("user.update");
+    Route::get("/destroy/{id}", [UserController::class, "destroy"])->name("user.destroy");
+
+});
 
 Route::get("/landing", [LandingController::class, "landing"])
     ->prefix("v1")
