@@ -58,6 +58,19 @@ Route::prefix("user")->group(function(){
     Route::get("/destroy/{id}", [UserController::class, "destroy"])->name("user.destroy");
 });
 
+// Route::prefix("user")
+//     ->name("user.")
+//     ->controller(UserController::class)
+//     ->group(function(){
+//         Route::get("/list","index")->name("list");
+//         Route::get("/detail/{id}","detail")->name("detail");
+//         Route::get("/store","store")->name("store");
+
+//         Route::post("/create","create")->name("create");
+//         Route::put("/update/{id}","update")->name("update");
+//         Route::get("/destroy/{id}","destroy")->name("destroy");
+//     });
+
 Route::prefix("sekolah")->group(function(){
     Route::get("/list", [SekolahController::class, "index"])->name("sekolah.list");
     Route::get("/detail/{id}", [SekolahController::class, "detail"])->name("sekolah.detail");
@@ -71,6 +84,8 @@ Route::prefix("sekolah")->group(function(){
 Route::get("/landing", [LandingController::class, "landing"])
     ->prefix("v1")
     ->name("page");
+
+Route::any('/upload', [LandingController::class, "upload"])->name("upload");
 
 // Route::prefix("user")->group(function(){
 //     Route::get("landing", LandingController::class, "landing"])

@@ -39,7 +39,7 @@ class SekolahController extends Controller
 
     } //menambah data
 
-    function update(Request $request) {
+    function update(Request $request, $id) {
         $user = Sekolah::query()
             ->where("id", $id)
             ->first();

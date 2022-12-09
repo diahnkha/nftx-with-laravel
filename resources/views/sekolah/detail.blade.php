@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Sekolah</title>
+    <title>Detail Sekolah</title>
 </head>
 <body>
     <a href="{{ route('sekolah.list') }}"><button>Kembali</button></a>
-    <form method="post" action="{{ route('sekolah.update', ["id" => $sekolah->id]) }}">
+    <form method="post" action="{{ route('sekolah.update', ['id' => $sekolah->id]) }}">
         @method("put")
         @csrf
         <label for="nama">Nama :</label>
@@ -27,7 +27,7 @@
             <option value="3" {{ $sekolah->jenis_sekolah == 3 ? "selected" : ""}}>SMA</option>
         </select>
 
-        <button type="Submit" @class(["btn", "btn-primary"])>Tambah</button>
+        <button type="Submit" @class(["btn", "btn-primary"])>Edit</button>
 
     </form>
 

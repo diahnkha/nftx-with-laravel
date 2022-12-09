@@ -39,7 +39,7 @@ class UserController extends Controller
 
     } //menambah data
 
-    function update(Request $request) {
+    function update(Request $request, $id) {
         $user = User::query()
             ->where("id", $id)
             ->first();
@@ -57,4 +57,21 @@ class UserController extends Controller
             ->delete();
         return redirect()->back();//kehalaman sebelumnya
     } //menghapus data
+
+
+    // function create(Request $request){
+    //     $request->get("nama");
+    //     $request->all();
+    //     $request->post("nama");
+    //     $request->acceptsJson();
+    //     $request->allFiles();
+    //     $request->bearerToken();
+
+    //     $request->session();
+    //     session();
+    //     $request->url();
+    //     // Bearer <token>
+    //     // username:password
+    //     // <token>
+    // }
 }

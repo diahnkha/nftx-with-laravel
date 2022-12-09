@@ -7,38 +7,37 @@
     <title>list</title>
 </head>
 <body>
-    <a href="{{ route('sekolah.store') }}"><button>Tambah sekolah</button></a>
+    <a href="{{ route('user.store') }}"><button>Tambah user</button></a>
     <table>
         <thead>
             <tr>
                 <th>Nama</th>
                 <th>Email</th>
-                <th>Alamat</th>
-                <th>Jenis_Sekolah</th>
+                <th>Password</th>
+                <th>Role</th>
                 <th>Aktif</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($sekolahs as $sekolah)
+            @foreach($users as $user)
                 <tr>
-                    <td>{{ $sekolah->nama }}</td>
-                    <td>{{ $sekolah->email }}</td>
-                    <td>{{ $sekolah->alamat }}</td>
+                    <td>{{ $user->nama }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->password }}</td>
                     <td>
-                        @switch($sekolah->role)
-                            @case(1) SD @break
-                            @case(2) TK @break
-                            @case(3) SMP @break
+                        @switch($user->role)
+                            @case(1) ADMIN @break
+                            @case(2) USER @break
                             @default Guest
                         @endswitch
                     </td>
-                    <td>{{ $sekolah->aktif ? "Ya" : "Tidak" }}</td>
+                    <td>{{ $user->aktif ? "Ya" : "Tidak" }}</td>
 
                     <td>
-                        <a href="{{ route('sekolah.detail',['id'=>$sekolah->id]) }}">
+                        <a href="{{ route('user.detail',['id'=>$user->id]) }}">
                             <button>Detail</button>
                         </a>
-                        <a href="{{ route('sekolah.destroy',['id'=>$sekolah->id]) }}">
+                        <a href="{{ route('user.destroy',['id'=>$user->id]) }}">
                             <button>Hapus</button>
                         </a>
                     </td>

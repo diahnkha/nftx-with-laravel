@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="{{ route('user.list') }}"><button>Kembali</button></a>
-    <form method="post" action="{{ route('user.update', ["id" => $user->id]) }}">
+    <form method="post" action="{{ route('user.update', ['id' => $user->id]) }}">
         @method("put")
         @csrf
         <label for="nama">Nama :</label>
@@ -27,7 +27,7 @@
             <option value="3" {{ $user->role == 3 ? "selected" : ""}}>Guest</option>
         </select>
 
-        <button type="Submit" @class(["btn", "btn-primary"])>Tambah</button>
+        <button type="Submit" @class(["btn", "btn-primary"])>Edit</button>
 
     </form>
 
